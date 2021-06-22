@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'singup.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,6 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: <String,WidgetBuilder>{
+        '/singup':(BuildContext context) => new singup()
+      },
+
       home: homepage(),
     );
   }
@@ -165,7 +170,9 @@ class _homepageState extends State<homepage> {
                 ),
                 SizedBox(height: 5),
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.of(context).pushNamed('/singup');
+                  },
                   child: Text("Register",
                     style: TextStyle(
                       color: Colors.green,
