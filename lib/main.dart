@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'singup.dart';
-
+import 'forgot.dart';
 void main() {
   runApp(MyApp());
 }
@@ -94,6 +94,9 @@ class _homepageState extends State<homepage> {
                     alignment: Alignment(1, 0),
                     padding: EdgeInsets.only(top: 15, left: 20),
                     child: InkWell(
+                      onTap: (){
+                        Navigator.of(context).pushNamed('/singup');
+                      },
                       child: Text(
                         "Forgot Password",
                         style: TextStyle(
